@@ -18,9 +18,9 @@ describe('Unit', () => {
         convertFromBase: jest.fn()
       };
 
-      expect(() => new Unit(overrides.convertToBase, overrides.convertFromBase)).not.toThrowError();
-      expect((new Unit(overrides.convertToBase, overrides.convertFromBase)).convertToBase).toBe(overrides.convertToBase);
-      expect((new Unit(overrides.convertToBase, overrides.convertFromBase)).convertFromBase).toBe(overrides.convertFromBase);
+      expect(() => new Unit(overrides.convertToBase, overrides.convertFromBase)).toThrowError();
+      expect((new Unit(overrides.convertToBase, overrides.convertFromBase)).convertToBase).not.toBe(overrides.convertToBase);
+      expect((new Unit(overrides.convertToBase, overrides.convertFromBase)).convertFromBase).not.toBe(overrides.convertFromBase);
     });
 
     it(`throws if supplied an invalid argument`, () => {
